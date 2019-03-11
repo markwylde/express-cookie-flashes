@@ -9,19 +9,17 @@ You can use sessions to do so but the aim was to avoid storing data on the serve
 ### Install
 This is a middleware to be used in Express.js.
 
-`npm install cookie-flash-messages`
-
 ### Require and declare
 In your Express.js app:
 ```javascript
-var express = require('express');
-var app = express();
-var cookieFlashMessages = require('cookie-flash-messages');
+var express = require('express')
+var app = express()
+var cookieFlashMessages = require('cookie-flash-messages')
 
 ...
 
 // Declare the middleware before your routes
-app.use(cookieFlashMessages);
+app.use(cookieFlashMessages)
 ```
 
 ### Use
@@ -29,7 +27,7 @@ app.use(cookieFlashMessages);
 You will then be allowed to call a new method `res.flash()` in your routes:
 ```javascript
 res.flash('your-message-type', 'Your message')
-res.redirect('/your-page');
+res.redirect('/your-page')
 ```
 The type can be anything. I personnally use `error|info|success|warning`.
 
@@ -41,10 +39,4 @@ If a flash message was set, it will be available as a `flashMessage` variable in
     type: 'your-message-type',
     text: 'Your message'
 }
-```
-
-For example in a Jade template, a simple example looks like this:
-```jade
-if flashMessage
-    div(class='flash-message ' + flashMessage.type)= flashMessage.text
 ```
