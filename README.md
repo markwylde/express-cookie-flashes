@@ -1,4 +1,4 @@
-# Cookie-flash-messages
+# express-cookie-flashes
 Use cookies to inject flash messages into your Express.js pages.
 Useful when you want to display a confirmation/error message when submitting a form. You usually process the form and, depending of the result, redirect the user and display a message.
 
@@ -14,7 +14,7 @@ In your Express.js app:
 ```javascript
 var express = require('express')
 var app = express()
-var cookieFlashMessages = require('cookie-flash-messages')
+var cookieFlashMessages = require('express-cookie-flashes')
 
 ...
 
